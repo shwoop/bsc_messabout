@@ -10,7 +10,7 @@ client_address = '0x110ba088d85505bd0818275f7b30693d397f0248'
 
 abi_file = pathlib.Path('cummies.abi.json')
 if not abi_file.exists():
-    resp = requests.get('https://api.bscscan.com/api?module=contract&action=getabi&address=0x27ae27110350b98d564b9a3eed31baebc82d878d')
+    resp = requests.get(f'https://api.bscscan.com/api?module=contract&action=getabi&address={contract}')
     if not resp.status_code == 200:
         print('fucked getting abi')
         exit(1)
